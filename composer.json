@@ -1,0 +1,8 @@
+{
+    "name": "zng_addons/wechat",
+    "autoload": {
+        "psr-4": {
+            "zng\\addons\\wechat\\": "src"
+        }
+    }
+}
