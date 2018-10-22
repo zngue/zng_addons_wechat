@@ -12,7 +12,7 @@
 	],
   "require":{
   
-		"zng_addons/wechat":"*"
+		"zng_addons/wechat":"1.2"
 		
 	}
 
