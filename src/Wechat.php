@@ -13,7 +13,7 @@ class Wechat {
 			$this->appid = $wxconfig ['appid'];
 			$this->secret = $wxconfig ['secret'];
 			$this->redirect_uri = $wxconfig ['redirect_uri'];
-			if($wxconfig['scope']){
+			if(isset( $wxconfig['scope'] ) && $wxconfig['scope']){
                 $this->scope = $wxconfig ['scope'];
             }
 	}
