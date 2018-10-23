@@ -13,7 +13,7 @@ class Wechat {
 			$this->appid = $wxconfig ['appid'];
 			$this->secret = $wxconfig ['secret'];
 			$this->redirect_uri = $wxconfig ['redirect_uri'];
-			if(isset( $wxconfig['scope'] ) && $wxconfig['scope']){
+			if( isset($wxconfig['scope']) && $wxconfig['scope']){
                 $this->scope = $wxconfig ['scope'];
             }
 	}
@@ -76,17 +76,19 @@ class Wechat {
 		$res = $this->get ( $url );
 		
 		$result = json_decode ( $res, true );
+		
+		if($result && isset($result['openid']) ){
+		    return $result ['openid'];
+		}
 
-		return $result ['openid'];
+		return false;
 	}
 	// 获取用户全局Access_token
 	private function getAccess_token() {
 		$url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=" . $this->appid . "&secret=" . $this->secret;
 		
 		$res = $this->get ( $url );
-		
 		$result = json_decode ( $res, 1 );
-		
 		return $result ['access_token'];
 	}
 	
