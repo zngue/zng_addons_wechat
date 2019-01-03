@@ -1,7 +1,6 @@
 # zng_addons_wechat
 引入wechat
-
-
+'''
 "repositories":[
 
 		{
@@ -15,4 +14,5 @@
 		"zng_addons/wechat":"1.2"
 		
 	}
+'''
 
